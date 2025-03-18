@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Creek Pancake House</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #59483C;
+            background-color: #F7F3E9;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #A67C52;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #8C6D4C;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: #59483C;
+        }
+        
+        .section-title span {
+            color: #A67C52;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #59483C;
+        }
+        
+        .logo span {
+            color: #A67C52;
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-menu li {
+            margin-left: 30px;
+        }
+        
+        .nav-menu a {
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #A67C52;
+            transition: width 0.3s;
+        }
+        
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero section styles */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(89, 72, 60, 0.8), rgba(89, 72, 60, 0.8)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #F7F3E9;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .hero-btns .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+        
+        .hero-btns .btn-secondary:hover {
+            background-color: white;
+            color: #333;
+        }
+        
+        /* About section styles */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #59483C;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        /* Featured dishes section styles */
+        .featured-dishes {
+            background-color: #EFE5D5;
+        }
+        
+        .dishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .dish-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .dish-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .dish-img {
+            height: 200px;
+            background: url('/api/placeholder/600/400') center/cover no-repeat;
+        }
+        
+        .dish-info {
+            padding: 20px;
+        }
+        
+        .dish-title {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            color: #59483C;
+        }
+        
+        .dish-price {
+            color: #A67C52;
+            font-weight: 700;
+        }
+        
+        .dish-desc {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        /* Menu section styles */
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .menu-tab {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .menu-tab.active, .menu-tab:hover {
+            color: #A67C52;
+            border-bottom-color: #A67C52;
+        }
+        
+        .menu-content {
+            display: none;
+        }
+        
+        .menu-content.active {
+            display: block;
+        }
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+        }
+        
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .menu-item-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: url('/api/placeholder/200/200') center/cover no-repeat;
+            flex-shrink: 0;
+        }
+        
+        .menu-item-info h3 {
+            color: #59483C;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .menu-item-info h3 span {
+            color: #A67C52;
+            font-weight: 600;
+        }
+        
+        /* Testimonials section styles */
+        .testimonials {
+            background-color: #59483C;
+            color: #F7F3E9;
+        }
+        
+        .testimonials .section-title {
+            color: white;
+        }
+        
+        .testimonials-slider {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        
+        .testimonial-item {
+            display: none;
+        }
+        
+        .testimonial-item.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .testimonial-nav {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .testimonial-dot.active, .testimonial-dot:hover {
+            background-color: white;
+        }
+        
+        /* Reservation section styles */
+        .reservation {
+            background: linear-gradient(rgba(89, 72, 60, 0.9), rgba(89, 72, 60, 0.9)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            color: #F7F3E9;
+        }
+        
+        .reservation-content {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .reservation-info, .reservation-form {
+            flex: 1;
+        }
+        
+        .reservation-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .reservation-info p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: #D6B894;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: transparent;
+            color: white;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #A67C52;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: #59483C;
+            color: #F7F3E9;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #D6B894;
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #D6B894;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: #A67C52;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+        
+        /* Menu Page styles */
+        .menu-page {
+            padding: 150px 0 80px;
+        }
+        
+        .menu-category {
+            margin-bottom: 50px;
+        }
+        
+        .category-title {
+            font-size: 2rem;
+            color: #59483C;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #A67C52;
+            display: inline-block;
+        }
+        
+        /* About Page styles */
+        .about-page {
+            padding: 150px 0 80px;
+        }
+        
+        .about-philosophy {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+        
+        .about-philosophy h2 {
+            font-size: 2.5rem;
+            color: #59483C;
+            margin-bottom: 20px;
+        }
+        
+        .about-philosophy p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .team-section {
+            margin-top: 80px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: url('/api/placeholder/400/400') center/cover no-repeat;
+        }
+        
+        .team-member h3 {
+            color: #59483C;
+            margin-bottom: 5px;
+        }
+        
+        .team-role {
+            color: #A67C52;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Page styles */
+        .contact-page {
+            padding: 150px 0 80px;
+        }
+        
+        .contact-info-box {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        .contact-form .form-control {
+            border-color: #ddd;
+            color: #333;
+        }
+        
+        .contact-form .form-control::placeholder {
+            color: #999;
+        }
+        
+        .map {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 30px;
+            background: url('/api/placeholder/1200/400') center/cover no-repeat;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 992px) {
+            .about-content, 
+            .reservation-content {
+                flex-direction: column;
+            }
+            
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -300px;
+                width: 300px;
+                height: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 30px 30px;
+                transition: right 0.3s;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .close-menu {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+            
+            .menu-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .menu-item-info h3 {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">Duck Creek<span> Pancake House</span></div>
+                <div class="mobile-menu-toggle">☰</div>
+                <ul class="nav-menu">
+                    <div class="close-menu">✕</div>
+                    <li><a href="#" class="active" onclick="navigate('home')">Home</a></li>
+                    <li><a href="#" onclick="navigate('menu')">Menu</a></li>
+                    <li><a href="#" onclick="navigate('about')">About</a></li>
+                    <li><a href="#" onclick="navigate('contact')">Contact</a></li>
+                    <li><a href="#reservation" class="btn">Book a Table</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Page Content -->
+    <div id="home-content" class="page-content active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Welcome to Duck Creek Pancake House</h1>
+                    <p>Home of the fluffiest pancakes and heartiest breakfast in town. Our chefs prepare delicious pancakes, waffles, and breakfast classics with the freshest ingredients to create an unforgettable morning experience.</p>
+                    <div class="hero-btns">
+                        <a href="#" class="btn" onclick="navigate('menu')">Explore Menu</a>
+                        <a href="#reservation" class="btn btn-secondary">Book a Table</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <div class="container">
+                <h2 class="section-title">Our <span>Story</span></h2>
+                <div class="about-content">
+                    <div class="about-img">
+                        <img src="/api/placeholder/600/400" alt="Restaurant Image">
+                    </div>
+                    <div class="about-text">
+                        <h2>Serving Breakfast Favorites Since 2010</h2>
+                        <p>Duck Creek Pancake House was born from a passion for exceptional breakfast and memorable dining experiences. What started as a small family kitchen has evolved into one of the area's most beloved breakfast destinations.</p>
+                        <p>Our philosophy is simple: use the finest ingredients, respect traditional recipes, and add our unique creative touch to every pancake, waffle, and breakfast dish we serve.</p>
+                        <p>Every meal at Duck Creek Pancake House is crafted with care, expertise, and a genuine love for the art of breakfast. We invite you to join us and become part of our story.</p>
+                        <a href="#" class="btn" onclick="navigate('about')">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Dishes Section -->
+        <section class="featured-dishes">
+            <div class="container">
+                <h2 class="section-title">Featured <span>Dishes</span></h2>
+                <div class="dishes-grid">
+                    <div class="dish-card">
+                        <div class="dish-img" style="background-image: url('/api/placeholder/600/400')"></div>
+                        <div class="dish-info">
+                            <div class="dish-title">
+                                <h3>Blueberry Pancakes</h3>
+                                <div class="dish-price">$12.99</div>
+                            </div>
+                            <p class="dish-desc">Stack of fluffy pancakes loaded with fresh blueberries, topped with powdered sugar and served with our signature maple syrup.</p>
+                            <a href="#" class="btn">Order Now</a>
+                        </div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-img" style="background-image: url('/api/placeholder/600/400')"></div>
+                        <div class="dish-info">
+                            <div class="dish-title">
+                                <h3>Belgian Waffles</h3>
+                                <div class="dish-price">$14.99</div>
+                            </div>
+                            <p class="dish-desc">Crispy on the outside, fluffy on the inside, topped with fresh strawberries, whipped cream, and drizzled with warm chocolate sauce.</p>
+                            <a href="#" class="btn">Order Now</a>
+                        </div>
+                    </div>
+                    <div class="dish-card">
+                        <div class="dish-img" style="background-image: url('/api/placeholder/600/400')"></div>
+                        <div class="dish-info">
+                            <div class="dish-title">
+                                <h3>Country Breakfast</h3>
+                                <div class="dish-price">$16.99</div>
+                            </div>
+                            <p class="dish-desc">Two eggs any style, crispy bacon or sausage, our famous home fries, and two buttermilk pancakes. Served with toast and preserves.</p>
+                            <a href="#" class="btn">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">What People <span>Say</span></h2>
+                <div class="testimonials-slider">
+                    <div class="testimonial-item active">
+                        <p class="testimonial-text">"The pancakes at Duck Creek are absolutely amazing! Light, fluffy, and the perfect amount of sweetness. We drive 30 minutes just to have breakfast here every weekend."</p>
+                        <div class="testimonial-author">David Johnson</div>
+                        <div class="testimonial-role">Regular Customer</div>
+                    </div>
+                    <div class="testimonial-item">
+                        <p class="testimonial-text">"I've had the pleasure of dining here multiple times, and each visit has been better than the last. Their blueberry pancakes are out of this world, and the service is always friendly."</p>
+                        <div class="testimonial-author">Sarah Williams</div>
+                        <div class="testimonial-role">Food Blogger</div>
+                    </div>
+                    <div class="testimonial-item">
+                        <p class="testimonial-text">"As someone with dietary restrictions, I appreciate the care and attention given to accommodating my needs. Their gluten-free options are just as delicious as the regular menu!"</p>
+                        <div class="testimonial-author">Michael Chen</div>
+                        <div class="testimonial-role">Loyal Customer</div>
+                    </div>
+                    <div class="testimonial-nav">
+                        <div class="testimonial-dot active" data-index="0"></div>
+                        <div class="testimonial-dot" data-index="1"></div>
+                        <div class="testimonial-dot" data-index="2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation Section -->
+        <section class="reservation" id="reservation">
+            <div class="container">
+                <h2 class="section-title">Make a <span>Reservation</span></h2>
+                <div class="reservation-content">
+                    <div class="reservation-info">
+                        <h2>Book Your Table</h2>
+                        <p>Reserve your table online and avoid the wait. For large groups or special events, please contact us directly.</p>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>+1 (555) 123-4567</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>reservations@duckcreekpancakes.com</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div>
+                                <p>Monday to Friday: 6:00 AM - 2:00 PM</p>
+                                <p>Saturday & Sunday: 6:00 AM - 3:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reservation-form">
+                        <form id="booking-form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="time" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" required>
+                                    <option value="" disabled selected>Number of Guests</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6+">6+ People</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Special Requests" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Book Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Menu Page Content -->
+    <div id="menu-content" class="page-content">
+        <section class="menu-page">
+            <div class="container">
+                <h2 class="section-title">Our <span>Menu</span></h2>
+                
+                <div class="menu-tabs">
+                    <div class="menu-tab active" data-menu="pancakes">Pancakes</div>
+                    <div class="menu-tab" data-menu="waffles">Waffles</div>
+                    <div class="menu-tab" data-menu="breakfast">Breakfast Classics</div>
+                    <div class="menu-tab" data-menu="sides">Sides & Beverages</div>
+                </div>
+                
+                <div class="menu-content active" id="pancakes-menu">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-img"></div>
+                            <div class="menu-item-info">
+                                <h3>Buttermilk Pancakes <span>$9.99
