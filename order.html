@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order online from Duck Creek Pancake House in Riverdale, Iowa through Uber Eats for convenient delivery or pickup.">
+    <title>Order Online - Duck Creek Pancake House</title>
+
+    <!-- Load External Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Load Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Load Navigation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('nav-placeholder').innerHTML = data);
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Navigation Placeholder -->
+    <header id="nav-placeholder"></header>
+
+    <!-- Order Page Content -->
+    <section class="order-selection">
+        <div class="container">
+            <h1 class="section-title">Order Online</h1>
+            
+            <div class="order-content">
+                <div class="order-image">
+                    <img src="/Images/breakfast-classic.jpg" alt="Breakfast platter at Duck Creek Pancake House">
+                </div>
+                
+                <div class="order-info">
+                    <h2>Enjoy Our Food at Home</h2>
+                    <p>
+                        Craving our delicious pancakes or breakfast classics but can't make it to the restaurant? 
+                        No problem! We've partnered with Uber Eats to bring our mouthwatering menu right to your doorstep.
+                    </p>
+                    
+                    <div class="delivery-options">
+                        <div class="delivery-option">
+                            <div class="option-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h3>Pickup</h3>
+                            <p>Order ahead and pick up at your convenience</p>
+                        </div>
+                        
+                        <div class="delivery-option">
+                            <div class="option-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h3>Delivery</h3>
+                            <p>Have your favorite dishes delivered to your door</p>
+                        </div>
+                    </div>
+                    
+                    <p class="order-note">
+                        Please note that delivery times may vary based on distance and current demand. 
+                        All online orders are handled through Uber Eats' secure platform.
+                    </p>
+                    
+                    <a href="https://www.ubereats.com/store/duck-creek-pancake-house/BgidvURoREC9yPA9YFWZVw" target="_blank" class="btn order-btn">
+                        <i class="fas fa-shopping-bag"></i> Order Now with Uber Eats
+                    </a>
+                </div>
+            </div>
+            
+            <div class="popular-items">
+                <h2 class="section-title">Popular Delivery Items</h2>
+                
+                <div class="popular-grid">
+                    <div class="popular-item">
+                        <div class="popular-img">
+                            <img src="/Images/pancakes.jpg" alt="Buttermilk Pancakes">
+                        </div>
+                        <h3>Buttermilk Pancakes</h3>
+                        <p>Our signature fluffy pancakes travel well and are a customer favorite!</p>
+                    </div>
+                    
+                    <div class="popular-item">
+                        <div class="popular-img">
+                            <img src="/Images/breakfast-classic.jpg" alt="The Duck Creek Special">
+                        </div>
+                        <h3>The Duck Creek Special</h3>
+                        <p>A hearty breakfast with eggs, bacon, hash browns, and pancakes</p>
+                    </div>
+                    
+                    <div class="popular-item">
+                        <div class="popular-img">
+                            <img src="/Images/club-sandwich.jpg" alt="Club Sandwich">
+                        </div>
+                        <h3>Club Sandwich</h3>
+                        <p>Triple-decker sandwich with all the fixings and crispy fries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <nav class="footer-menu">
+                <a href="index.html">Home</a> |
+                <a href="menu.html">Menu</a> |
+                <a href="gallery.html">Gallery</a> |
+                <a href="order.html">Order</a> |
+                <a href="contact.html">Contact</a>
+            </nav>
+            <hr>
+            <p>© 2025 Duck Creek Pancake House. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

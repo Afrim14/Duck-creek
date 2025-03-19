@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our gallery of delicious breakfast and lunch options at Duck Creek Pancake House in Riverdale, Iowa.">
+    <title>Gallery - Duck Creek Pancake House</title>
+
+    <!-- Load External Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Load Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Load Navigation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('nav-placeholder').innerHTML = data);
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Navigation Placeholder -->
+    <header id="nav-placeholder"></header>
+
+    <!-- Gallery Page Content -->
+    <section class="gallery-page">
+        <div class="container">
+            <h1 class="section-title">Our Food Gallery</h1>
+            
+            <!-- Gallery Filter -->
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+                <button class="filter-btn" data-filter="pancakes">Pancakes & Waffles</button>
+                <button class="filter-btn" data-filter="lunch">Lunch</button>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Breakfast Items -->
+                <div class="gallery-item" data-category="breakfast">
+                    <img src="/Images/breakfast-classic.jpg" alt="Classic Breakfast">
+                    <div class="gallery-caption">
+                        <h3>Classic Breakfast</h3>
+                        <p>Eggs, bacon, hash browns, and toast</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="breakfast">
+                    <img src="/Images/eggs-hash.jpg" alt="Country Skillet">
+                    <div class="gallery-caption">
+                        <h3>Country Skillet</h3>
+                        <p>Potatoes, sausage, peppers, and eggs</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="breakfast">
+                    <img src="/Images/eggs-bacon.jpg" alt="Eggs & Bacon">
+                    <div class="gallery-caption">
+                        <h3>Sunny Side Up</h3>
+                        <p>Eggs, crispy bacon, and hash browns</p>
+                    </div>
+                </div>
+                
+                <!-- Pancakes & Waffles -->
+                <div class="gallery-item" data-category="pancakes">
+                    <img src="/Images/waffle-sandwich.jpg" alt="Waffle Sandwich">
+                    <div class="gallery-caption">
+                        <h3>Waffle Sandwich</h3>
+                        <p>Belgian waffles with eggs and bacon</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="pancakes">
+                    <img src="/Images/pancakes.jpg" alt="Buttermilk Pancakes">
+                    <div class="gallery-caption">
+                        <h3>Buttermilk Pancakes</h3>
+                        <p>Fluffy homemade pancakes with maple syrup</p>
+                    </div>
+                </div>
+                
+                <!-- Lunch Items -->
+                <div class="gallery-item" data-category="lunch">
+                    <img src="/Images/club-sandwich.jpg" alt="Club Sandwich">
+                    <div class="gallery-caption">
+                        <h3>Club Sandwich</h3>
+                        <p>Triple-decker sandwich with crispy fries</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="lunch">
+                    <img src="/Images/chef-salad.jpg" alt="Chef Salad">
+                    <div class="gallery-caption">
+                        <h3>Chef Salad</h3>
+                        <p>Fresh greens with turkey, ham, and eggs</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="lunch">
+                    <img src="/Images/gyro.jpg" alt="Greek Gyro">
+                    <div class="gallery-caption">
+                        <h3>Greek Gyro</h3>
+                        <p>Traditional gyro with tzatziki sauce</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Photo Modal -->
+    <div class="modal" id="photoModal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Full-size image">
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <nav class="footer-menu">
+                <a href="index.html">Home</a> |
+                <a href="menu.html">Menu</a> |
+                <a href="gallery.html">Gallery</a> |
+                <a href="order.html">Order</a> |
+                <a href="contact.html">Contact</a>
+            </nav>
+            <hr>
+            <p>© 2025 Duck Creek Pancake House. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

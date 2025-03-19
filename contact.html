@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Duck Creek Pancake House in Riverdale, Iowa. Find our location, hours, phone number, and send us a message.">
+    <title>Contact - Duck Creek Pancake House</title>
+
+    <!-- Load External Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Load Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Load Navigation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('nav-placeholder').innerHTML = data);
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Navigation Placeholder -->
+    <header id="nav-placeholder"></header>
+
+    <!-- Contact Page Content -->
+    <section class="contact-page">
+        <div class="container">
+            <h1 class="section-title">Contact Us</h1>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p><strong>Address:</strong></p>
+                            <p>4405 State Street</p>
+                            <p>Riverdale, Iowa</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <p><strong>Phone:</strong></p>
+                            <p>(563) 555-1234</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p><strong>Email:</strong></p>
+                            <p>info@duckcreekpancakehouse.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hours">
+                        <h4>Hours of Operation</h4>
+                        <ul class="hours-list">
+                            <li>
+                                <span>Monday - Friday:</span>
+                                <span>6:00 AM - 2:00 PM</span>
+                            </li>
+                            <li>
+                                <span>Saturday:</span>
+                                <span>6:00 AM - 3:00 PM</span>
+                            </li>
+                            <li>
+                                <span>Sunday:</span>
+                                <span>7:00 AM - 3:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Map -->
+            <div class="map-container">
+                <h2 class="section-title">Find Us</h2>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2995.6342378473187!2d-90.47751748456548!3d41.53963897924957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87e230a572ea7bcb%3A0xb901d08f57ea8e0a!2s4405%20State%20St%2C%20Bettendorf%2C%20IA%2052722!5e0!3m2!1sen!2sus!4v1679330671977!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <nav class="footer-menu">
+                <a href="index.html">Home</a> |
+                <a href="menu.html">Menu</a> |
+                <a href="gallery.html">Gallery</a> |
+                <a href="order.html">Order</a> |
+                <a href="contact.html">Contact</a>
+            </nav>
+            <hr>
+            <p>© 2025 Duck Creek Pancake House. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

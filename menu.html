@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our delicious menu at Duck Creek Pancake House. From fluffy pancakes to hearty breakfast classics and lunch favorites.">
+    <title>Menu - Duck Creek Pancake House</title>
+
+    <!-- Load External Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Load Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Load Navigation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('nav.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('nav-placeholder').innerHTML = data);
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Navigation Placeholder -->
+    <header id="nav-placeholder"></header>
+
+    <!-- Menu Page Content -->
+    <section class="menu-page">
+        <div class="container">
+            <h1 class="section-title">Our Menu</h1>
+            
+            <!-- Category Tabs -->
+            <div class="menu-tabs">
+                <div class="tab-container">
+                    <button class="tab-button active" data-tab="pancakes">Pancakes & Waffles</button>
+                    <button class="tab-button" data-tab="breakfast">Breakfast Classics</button>
+                    <button class="tab-button" data-tab="skillets">Skillets & Omelets</button>
+                    <button class="tab-button" data-tab="lunch">Lunch Favorites</button>
+                    <button class="tab-button" data-tab="sides">Sides & Beverages</button>
+                </div>
+            </div>
+            
+            <!-- Pancakes & Waffles -->
+            <div class="menu-category tab-content active" id="pancakes">
+                <h2 class="category-title">Pancakes & Waffles</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/waffle-sandwich.jpg" alt="Waffle Sandwich">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Waffle Sandwich</h3>
+                                <div class="menu-item-price">$12.99</div>
+                            </div>
+                            <p class="menu-item-desc">Our signature golden waffles layered with eggs, cheese, and your choice of breakfast meat. Served with a side of maple syrup.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/pancakes.jpg" alt="Buttermilk Pancakes">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Buttermilk Pancakes</h3>
+                                <div class="menu-item-price">$8.99</div>
+                            </div>
+                            <p class="menu-item-desc">Stack of fluffy made-from-scratch buttermilk pancakes served with whipped butter and warm maple syrup.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/french-toast.jpg" alt="French Toast">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Cinnamon French Toast</h3>
+                                <div class="menu-item-price">$9.99</div>
+                            </div>
+                            <p class="menu-item-desc">Thick slices of bread dipped in our special batter, grilled to golden perfection, and dusted with powdered sugar.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/blueberry-pancakes.jpg" alt="Blueberry Pancakes">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Blueberry Pancakes</h3>
+                                <div class="menu-item-price">$10.99</div>
+                            </div>
+                            <p class="menu-item-desc">Our classic buttermilk pancakes loaded with fresh blueberries and topped with blueberry compote.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Breakfast Classics -->
+            <div class="menu-category tab-content" id="breakfast">
+                <h2 class="category-title">Breakfast Classics</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/breakfast-classic.jpg" alt="The Duck Creek Special">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>The Duck Creek Special</h3>
+                                <div class="menu-item-price">$14.99</div>
+                            </div>
+                            <p class="menu-item-desc">Two eggs any style, choice of bacon or sausage, crispy hash browns, and two fluffy pancakes. Our most popular breakfast!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/eggs-hash.jpg" alt="Country Skillet">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Country Skillet</h3>
+                                <div class="menu-item-price">$13.99</div>
+                            </div>
+                            <p class="menu-item-desc">Seasoned breakfast potatoes topped with sausage, bell peppers, onions, and two eggs any style. Served with toast.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/eggs-bacon.jpg" alt="Sunrise Breakfast">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Sunrise Breakfast</h3>
+                                <div class="menu-item-price">$11.99</div>
+                            </div>
+                            <p class="menu-item-desc">Two eggs any style with your choice of bacon, sausage, or ham. Served with hash browns and toast.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/biscuits-gravy.jpg" alt="Biscuits & Gravy">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Biscuits & Gravy</h3>
+                                <div class="menu-item-price">$10.99</div>
+                            </div>
+                            <p class="menu-item-desc">Freshly baked biscuits smothered in our homemade sausage gravy. Add two eggs any style for $2.50 more.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skillets & Omelets -->
+            <div class="menu-category tab-content" id="skillets">
+                <h2 class="category-title">Skillets & Omelets</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/skillet.jpg" alt="Veggie Skillet">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Veggie Skillet</h3>
+                                <div class="menu-item-price">$12.99</div>
+                            </div>
+                            <p class="menu-item-desc">Seasoned potatoes topped with sautéed mushrooms, bell peppers, onions, tomatoes, and spinach. Topped with two eggs any style.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/meat-omelet.jpg" alt="Meat Lover's Omelet">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Meat Lover's Omelet</h3>
+                                <div class="menu-item-price">$13.99</div>
+                            </div>
+                            <p class="menu-item-desc">Three-egg omelet stuffed with bacon, sausage, ham, and cheddar cheese. Served with hash browns and toast.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/western-wrap.jpg" alt="Western Wrap">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Western Wrap</h3>
+                                <div class="menu-item-price">$11.99</div>
+                            </div>
+                            <p class="menu-item-desc">Scrambled eggs, ham, bell peppers, onions, and cheddar cheese wrapped in a flour tortilla. Served with hash browns.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/cheese-omelet.jpg" alt="Build Your Own Omelet">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Build Your Own Omelet</h3>
+                                <div class="menu-item-price">$12.99</div>
+                            </div>
+                            <p class="menu-item-desc">Three-egg omelet with your choice of three fillings: cheese, veggies, and meats. Served with hash browns and toast.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lunch Favorites -->
+            <div class="menu-category tab-content" id="lunch">
+                <h2 class="category-title">Lunch Favorites</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/club-sandwich.jpg" alt="Club Sandwich">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Club Sandwich</h3>
+                                <div class="menu-item-price">$12.99</div>
+                            </div>
+                            <p class="menu-item-desc">Triple-decker sandwich with turkey, ham, bacon, lettuce, tomato, and mayo on toasted bread. Served with fries.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/burger.jpg" alt="Classic Burger">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Classic Burger</h3>
+                                <div class="menu-item-price">$13.99</div>
+                            </div>
+                            <p class="menu-item-desc">Half-pound Angus beef patty with lettuce, tomato, onion, and pickle on a toasted brioche bun. Served with fries.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/gyro.jpg" alt="Greek Gyro">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Greek Gyro</h3>
+                                <div class="menu-item-price">$11.99</div>
+                            </div>
+                            <p class="menu-item-desc">Seasoned gyro meat with tomatoes, onions, and tzatziki sauce wrapped in warm pita bread. Served with fries.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/chef-salad.jpg" alt="Chef Salad">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Chef Salad</h3>
+                                <div class="menu-item-price">$12.99</div>
+                            </div>
+                            <p class="menu-item-desc">Fresh greens topped with turkey, ham, cheese, hard-boiled egg, tomatoes, cucumber, and your choice of dressing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sides & Beverages -->
+            <div class="menu-category tab-content" id="sides">
+                <h2 class="category-title">Sides & Beverages</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/hash-browns.jpg" alt="Hash Browns">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Hash Browns</h3>
+                                <div class="menu-item-price">$3.99</div>
+                            </div>
+                            <p class="menu-item-desc">Crispy shredded potatoes grilled to golden perfection.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/bacon.jpg" alt="Bacon">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Bacon (4 Strips)</h3>
+                                <div class="menu-item-price">$4.99</div>
+                            </div>
+                            <p class="menu-item-desc">Thick-cut bacon strips cooked to your preference.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/coffee.jpg" alt="Fresh Coffee">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Fresh Coffee</h3>
+                                <div class="menu-item-price">$2.99</div>
+                            </div>
+                            <p class="menu-item-desc">Freshly brewed coffee with free refills. Regular or decaf.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-img">
+                            <img src="/Images/orange-juice.jpg" alt="Fresh Orange Juice">
+                        </div>
+                        <div class="menu-item-info">
+                            <div class="menu-item-title">
+                                <h3>Fresh Orange Juice</h3>
+                                <div class="menu-item-price">$3.99</div>
+                            </div>
+                            <p class="menu-item-desc">Freshly squeezed orange juice, available in small or large.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <nav class="footer-menu">
+                <a href="index.html">Home</a> |
+                <a href="menu.html">Menu</a> |
+                <a href="gallery.html">Gallery</a> |
+                <a href="order.html">Order</a> |
+                <a href="contact.html">Contact</a>
+            </nav>
+            <hr>
+            <p>© 2025 Duck Creek Pancake House. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
