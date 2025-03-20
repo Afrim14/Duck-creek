@@ -41,9 +41,7 @@
 
     <!-- Hero Image -->
     <div class="hero-image">
-        <!-----<img src="Images/Land.JPG" alt="Duck Creek Pancake House"> --->
-        <img src="Images/Land.JPG" alt="Duck Creek Pancake House" />
-
+        <img src="Images/Land.JPG" alt="Duck Creek Pancake House">
     </div>
 
     <!-- Featured Items Section -->
@@ -53,7 +51,7 @@
             <div class="featured-grid">
                 <div class="featured-item">
                     <div class="featured-img">
-                        <img src="/Images/waffle-sandwich.jpg" alt="Waffle Sandwich">
+                        <img src="Images/waffle-sandwich.jpg" alt="Waffle Sandwich">
                     </div>
                     <div class="featured-info">
                         <h3>Waffle Sandwich</h3>
@@ -64,7 +62,7 @@
                 
                 <div class="featured-item">
                     <div class="featured-img">
-                        <img src="/Images/breakfast-classic.jpg" alt="The Duck Creek Special">
+                        <img src="Images/breakfast-classic.jpg" alt="The Duck Creek Special">
                     </div>
                     <div class="featured-info">
                         <h3>The Duck Creek Special</h3>
@@ -75,7 +73,7 @@
                 
                 <div class="featured-item">
                     <div class="featured-img">
-                        <img src="/Images/club-sandwich.jpg" alt="Club Sandwich">
+                        <img src="Images/club-sandwich.jpg" alt="Club Sandwich">
                     </div>
                     <div class="featured-info">
                         <h3>Club Sandwich</h3>
@@ -93,7 +91,7 @@
             <h2 class="section-title">Our <span>Story</span></h2>
             <div class="about-content">
                 <div class="about-img">
-                    <img src="/Images/restaurant-interior.jpg" alt="Duck Creek Pancake House Interior">
+                    <img src="Images/restaurant-interior.jpg" alt="Duck Creek Pancake House Interior">
                 </div>
                 <div class="about-text">
                     <h3>Family Owned Since 1985</h3>
@@ -245,45 +243,5 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
-    <script>
-        // Testimonial slider functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const testimonialItems = document.querySelectorAll('.testimonial-item');
-            const testimonialDots = document.querySelectorAll('.testimonial-dot');
-            let currentIndex = 0;
-            
-            // Function to show testimonial by index
-            function showTestimonial(index) {
-                // Hide all testimonials
-                testimonialItems.forEach(item => {
-                    item.classList.remove('active');
-                });
-                
-                // Remove active class from all dots
-                testimonialDots.forEach(dot => {
-                    dot.classList.remove('active');
-                });
-                
-                // Show testimonial at the given index
-                testimonialItems[index].classList.add('active');
-                testimonialDots[index].classList.add('active');
-                currentIndex = index;
-            }
-            
-            // Set up dot click events
-            testimonialDots.forEach(dot => {
-                dot.addEventListener('click', function() {
-                    const index = parseInt(this.getAttribute('data-index'));
-                    showTestimonial(index);
-                });
-            });
-            
-            // Auto-rotate testimonials
-            setInterval(function() {
-                currentIndex = (currentIndex + 1) % testimonialItems.length;
-                showTestimonial(currentIndex);
-            }, 5000);
-        });
-    </script>
 </body>
 </html>

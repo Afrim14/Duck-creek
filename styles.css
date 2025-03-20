@@ -535,7 +535,7 @@ ul {
 /* ===== CTA SECTION ===== */
 .cta-section {
     padding: 80px 20px;
-    background: linear-gradient(rgba(89, 72, 60, 0.9), rgba(89, 72, 60, 0.9)), url('/Images/Land.JPG') center/cover no-repeat;
+    background: linear-gradient(rgba(89, 72, 60, 0.9), rgba(89, 72, 60, 0.9)), url('Images/Land.JPG') center/cover no-repeat;
     color: white;
     text-align: center;
 }
@@ -1197,4 +1197,92 @@ footer p {
     .hero-image {
         height: 300px;
     }
+}
+
+/* ===== SKIP LINK FOR ACCESSIBILITY ===== */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    z-index: 999;  }
+    .skip-link:hover {
+    background: var(--secondary-color); }
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ===== THANK YOU MESSAGE FOR CONTACT FORM ===== */
+.thank-you-message {
+    text-align: center;
+    padding: 30px;
+}
+
+.thank-you-message h3 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.thank-you-message p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+/* ===== ERROR PAGES ===== */
+.error-container {
+    text-align: center;
+    padding: 150px 20px 80px;
+}
+
+.error-code {
+    font-size: 120px;
+    color: var(--primary-color);
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.error-title {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.error-message {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.error-icon {
+    font-size: 100px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.error-links {
+    margin-top: 40px;
+}
+
+.error-links a {
+    margin: 0 10px;
+}
+
+/* ===== LOADING STATES FOR IMAGES ===== */
+img {
+    transition: opacity 0.3s;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+img:not(.loaded) {
+    opacity: 0;
 }
